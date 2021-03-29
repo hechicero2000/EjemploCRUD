@@ -1,0 +1,49 @@
+﻿@model EjemploCRUD.Models.UsuarioViewModel
+
+@{
+    ViewBag.Title = "Editar";
+}
+
+<h2>@ViewBag.Title</h2>
+
+@using (Html.BeginForm("Editar", "Usuario", FormMethod.Post))
+{
+    <div class="row">
+        <div class="col-md-12">
+
+            @Html.HiddenFor(v => v.Id)
+
+            <div>
+                @Html.LabelFor(v => v.Nombre)
+                @Html.TextBoxFor(v => v.Nombre, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(v => v.Nombre, null, new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(v => v.Correo)
+                @Html.TextBoxFor(v => v.Correo, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(v => v.Correo, "", new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(v => v.Usuario)
+                @Html.TextBoxFor(v => v.Usuario, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(v => v.Usuario, "", new { @class = "red" })
+            </div>
+
+            <div>
+                @Html.LabelFor(v => v.Contrasena)
+                @Html.TextBoxFor(v => v.Contrasena, "", new { @class = "form-control" })
+                @Html.ValidationMessageFor(v => v.Contrasena, "", new { @class = "red" })
+            </div>
+            <br />
+
+            <div class="">
+                <input type="submit" name="name" value="Guardar" class="btn btn-primary" />
+            </div>
+        </div>
+    </div>
+}
+
+
+
